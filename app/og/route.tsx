@@ -31,4 +31,4 @@ export async function GET(request: Request) {
     { width: 1200, height: 630 }
   );
 }   
-// lib/meta.ts
+// lib/meta.tsfefve
