@@ -1,27 +1,42 @@
 {
   "name": "siyaq",
-  "version": "0.1.0",
   "private": true,
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "concurrently -k -n CL,NEXT \"npm:content:dev\" \"next dev\"",
+    "content:dev": "contentlayer dev",
+    "build": "contentlayer build && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier -w ."
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.3"
+    "@vercel/og": "^0.6.2",
+    "class-variance-authority": "0.7.0",
+    "contentlayer": "0.3.4",
+    "framer-motion": "11.0.17",
+    "lucide-react": "0.453.0",
+    "next": "^14.2.33",
+    "next-intl": "3.17.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remark-gfm": "4.0.1",
+    "tailwind-merge": "2.5.2",
+    "tailwindcss-animate": "1.0.7",
+    "zod": "3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.3",
-    "@eslint/eslintrc": "^3"
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.4",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.18",
+    "concurrently": "^9.2.1",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.7",
+    "postcss": "8.4.31",
+    "prettier": "3.3.3",
+    "tailwindcss": "3.4.10",
+    "typescript": "5.5.4"
   }
 }
