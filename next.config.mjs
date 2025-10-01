@@ -1,4 +1,5 @@
 ﻿import path from "node:path";
+import { withContentlayer } from 'next-contentlayer';
 
 // /next.config.mjs
 const nextConfig = {
@@ -17,4 +18,4 @@ const nextConfig = {
   }
 };
 
-export default nextConfig;
+export default withContentlayer(nextConfig);
