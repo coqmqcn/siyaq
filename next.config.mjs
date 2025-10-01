@@ -1,3 +1,5 @@
+﻿import path from "node:path";
+
 // /next.config.mjs
 const nextConfig = {
   images: {
@@ -7,7 +9,12 @@ const nextConfig = {
       { protocol: "https", hostname: "images.pexels.com" }
     ]
   },
-  experimental: { typedRoutes: true }
+  experimental: { typedRoutes: true },
+  webpack: (config) => {
+    config.resolve.alias["contentlayer/generated"] = path.join(process.cwd(), ".contentlayer/generated");
+    config.resolve.alias["@"] = config.resolve.alias["@"] ?? path.join(process.cwd());
+    return config;
+  }
 };
 
 export default nextConfig;
