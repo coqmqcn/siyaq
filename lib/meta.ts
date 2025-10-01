@@ -2,7 +2,7 @@
 export const site = {
   nameAr: "سِيَاق",
   nameEn: "SIYAQ",
-  url: "http://localhost:3000",
+  url: "https://siyaq-mocha.vercel.app",
   descriptionAr:
     "سِيَاق — استوديو يوازن بين التقنية والروح. نصنع تجارب رقمية هادئة وعميقة بعلامة بصرية أنيقة.",
   descriptionEn:
